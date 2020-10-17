@@ -11,14 +11,14 @@ import logo from '../../resources/images/logos/logo.png';
 import { useHistory, useLocation } from 'react-router-dom';
 import googleLogo from '../../resources/images/googleFirebase.png';
 
-if (firebase.apps.length === 0) { firebase.initializeApp(firebaseConfig) }
-
 const Login = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const history = useHistory();
     const location = useLocation();
     const { from } = location.state || { from: { pathname: "/" } };
 
+    if (firebase.apps.length === 0) { firebase.initializeApp(firebaseConfig) };
+    
     const [user, setUser] = useState({
         isSignIn: false,
         name: '',

@@ -39,9 +39,8 @@ const AddService = () => {
         .then(data => {
             console.log(data);
             if(data){
-                // alert('Service added Successfully')
                 toast.success('Service Added Successfully')
-                history.push('/service');
+                history.push('/services');
             }
         })
         .catch(error => {
