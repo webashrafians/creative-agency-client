@@ -3,14 +3,14 @@ import { useState, useEffect } from 'react';
 import ServiceCard from '../ServiceCard/ServiceCard';
 
 const Service = () => {
-    const [service, setService] = useState([]);
+    const [services, setServices] = useState([]);
 
     useEffect(() => {
-        fetch('https://pure-inlet-65517.herokuapp.com/service', {
+        fetch('https://pure-inlet-65517.herokuapp.com/services', {
             method: 'POST'
         })
             .then(response => response.json())
-            .then(data => setService(data))
+            .then(data => setServices(data))
     }, [])
 
     return (
@@ -18,7 +18,7 @@ const Service = () => {
             <h3 className="text-center py-5 font-weight-bold">Provide Awesome <span style={{ color: '#7AB259' }}>Services</span></h3>
             <div className="row">
                 {
-                    service.map(service => <ServiceCard key={service._id} service={service}></ServiceCard>)
+                    services.map(service => <ServiceCard key={service._id} service={service}></ServiceCard>)
                 }
             </div>
         </div>

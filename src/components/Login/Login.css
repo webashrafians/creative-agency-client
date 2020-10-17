@@ -1,5 +1,6 @@
 .login-area{
     height: 100vh;
+    cursor: pointer;
 }
 .login{
     width: 490px;

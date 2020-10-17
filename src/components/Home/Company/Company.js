@@ -8,7 +8,7 @@ import './Company.css';
 
 const Company = () => {
     return (
-        <div className="container d-flex justify-content-center flex-wrap py-5 mt-3">
+        <div className="container d-flex justify-content-center flex-wrap py-5">
             <img className="company-logo mr-5" src={slack} alt=""/>
             <img className="company-logo mr-5" src={google} alt=""/>
             <img className="company-logo mr-5" src={uber} alt=""/>
