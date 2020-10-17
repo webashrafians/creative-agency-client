@@ -1,0 +1,14 @@
+.header-container{
+    background-color: #FBD062;
+    position: relative;
+}
+.header-container:after {
+	content: "";
+	position: absolute;
+	top: calc(100% - 5px);
+	left: 0;
+	width: 100%;
+	height: 100px;
+	background: #FBD062;
+	clip-path: polygon(106% 0, 0 0, 0 100%);
+}

@@ -1,0 +1,41 @@
+.section-padding{
+    padding: 100px 0;
+}
+.carouselbg{
+    background-color: #111430;
+}
+.brand-logo{
+    height: 40px;
+    width: 130px;
+    transition: .6s;
+}
+.brand-logo:hover{
+    transform: scale(1.1);
+}
+.brand-button{
+    /* width:110px; */
+    height: 40px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.brand-button span{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+.brand-button span:after {
+    content: '\00BB';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+.brand-button:hover span {
+    padding-right: 15px;
+}
+.brand-button:hover span:after {
+    opacity: 3;
+    right: 0;
+}

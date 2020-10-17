@@ -1,0 +1,16 @@
+.login-area{
+    height: 100vh;
+}
+.login{
+    width: 490px;
+    height: 400px;
+    border: 1px solid gray;
+}
+.google-logo{
+    height: 30px;
+    widows: 30px;
+}
+.google-login{
+    border: 1px solid gray;
+    border-radius: 20px;
+}

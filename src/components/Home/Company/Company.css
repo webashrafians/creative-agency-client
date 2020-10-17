@@ -1,0 +1,8 @@
+.company-logo{
+    height: 50px;
+    width: 120px;
+    transition: .6s;
+}
+.company-logo:hover{
+    transform: scale(1.2);
+}

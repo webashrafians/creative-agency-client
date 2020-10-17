@@ -1,0 +1,9 @@
+.navbar .navbar-nav .active a::after{
+    content: "";
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    height: 3px;
+    background-color: green;
+    display: block;
+}

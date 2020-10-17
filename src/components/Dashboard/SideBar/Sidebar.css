@@ -1,0 +1,12 @@
+.sidebar{
+    min-height: 100vh;
+    background-color: white;
+}
+.sidebar li{
+    margin-bottom: 1em;
+}
+.sidebar li:hover span{
+    display: inline-block;
+    transform: translateX(3px);
+}
+
