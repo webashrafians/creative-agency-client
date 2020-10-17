@@ -26,9 +26,9 @@ const Login = () => {
         photo: ''
     })
 
-    const provider = new firebase.auth.GoogleAuthProvider();
-
+    
     const handleSignIn = () =>{
+        const provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithPopup(provider)
         .then(response => {
           const {displayName, email, photoURL} = response.user;
@@ -43,11 +43,22 @@ const Login = () => {
           setLoggedInUser(newUser);
           history.replace(from);
         })
-        .catch(error =>{
+        .catch(error => {
           console.log(error);
           console.log(error.message);
         })
     }
+
+
+    const storeAuthToken = () => {
+        firebase.auth().currentUser.getIdToken(/* forceRefresh */ true)
+          .then(function (idToken) {
+            sessionStorage.setItem('token', idToken);
+            history.replace(from);
+          }).catch(function (error) {
+            // Handle error
+          });
+      }
     
     return (
         <div className="container">
