@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { UserContext } from '../../../App';
 import DashboardHeader from '../DashboardHeader/DashboardHeader';
 
-const WelcomeToDashboard = () => {
+const DashboardIntro = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     return (
         <div>
@@ -15,4 +15,4 @@ const WelcomeToDashboard = () => {
         </div>
     );
 };
-export default WelcomeToDashboard;
+export default DashboardIntro;

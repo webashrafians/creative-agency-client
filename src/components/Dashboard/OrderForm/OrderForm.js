@@ -1,12 +1,12 @@
 import React from 'react';
 import { useState } from 'react';
-import { useHistory } from 'react-router-dom';
-import DashboardHeader from '../DashboardHeader/DashboardHeader';
-import Sidebar from '../SideBar/Sidebar';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { UserContext } from '../../../App';
 import { useContext } from 'react';
+import { toast } from 'react-toastify';
+import Sidebar from '../SideBar/Sidebar';
+import { UserContext } from '../../../App';
+import { useHistory } from 'react-router-dom';
+import 'react-toastify/dist/ReactToastify.css';
+import DashboardHeader from '../DashboardHeader/DashboardHeader';
 
 toast.configure();
 
@@ -27,6 +27,7 @@ const OrderForm = () => {
         setFile(newFile);
     }
 
+    //form submit................
     const handleSubmit = (e) => {
         const formData = new FormData()
         console.log(info);
@@ -38,6 +39,7 @@ const OrderForm = () => {
         formData.append('price', info.price);
         formData.append('status', info.status);
 
+        //order api...............................................
         fetch('https://pure-inlet-65517.herokuapp.com/addOrder', {
             method: 'POST',
             body: formData
@@ -46,7 +48,6 @@ const OrderForm = () => {
             .then(data => {
                 console.log(data);
                 if (data) {
-                    // alert('Order added Successfully')
                     toast.success('Order added Successfully');
                     history.push('/dashboard/serviceDataCard');
                 }

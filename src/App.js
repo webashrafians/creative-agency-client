@@ -7,7 +7,7 @@ import Review from "./components/Dashboard/Review/Review";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
 import OrderForm from "./components/Dashboard/OrderForm/OrderForm";
-import MakeAdmin from "./components/Dashboard/MakeAdmin/MakeAdmin";
+import CreateAdmin from "./components/Dashboard/CreateAdmin/CreateAdmin";
 import AddService from "./components/Dashboard/AddService/AddService";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ServiceByCard from "./components/Dashboard/ServiceByCard/ServiceByCard";
@@ -28,7 +28,7 @@ function App() {
           <Route path="/dashboard/serviceDataCard"><ServiceByCard></ServiceByCard></Route>
           <Route path="/dashboard/serviceTableData"><ServiceTableData></ServiceTableData></Route>
           <Route path="/dashboard/addService"><AddService></AddService></Route>
-          <Route path="/dashboard/makeAdmin"><MakeAdmin></MakeAdmin></Route>
+          <Route path="/dashboard/CreateAdmin"><CreateAdmin></CreateAdmin></Route>
           <Route path="/login"><Login></Login></Route>
           <Route path="/"><Home></Home></Route>
         </Switch>

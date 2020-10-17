@@ -1,14 +1,15 @@
 import React from 'react';
-import { useForm } from 'react-hook-form';
-import DashboardHeader from '../DashboardHeader/DashboardHeader';
-import Sidebar from '../SideBar/Sidebar';
 import { toast } from 'react-toastify';
+import { useForm } from 'react-hook-form';
+import Sidebar from '../SideBar/Sidebar';
 import 'react-toastify/dist/ReactToastify.css';
+import DashboardHeader from '../DashboardHeader/DashboardHeader';
 
 toast.configure();
 
-const MakeAdmin = () => {
+const CreateAdmin = () => {
     const { register, handleSubmit, errors } = useForm();
+
     const onSubmit = data => {
         fetch('https://pure-inlet-65517.herokuapp.com/addAdmin', {
             method: 'POST',
@@ -25,12 +26,13 @@ const MakeAdmin = () => {
                 }
             })
     };
+
     return (
         <div className="row">
-            <div className="col-lg-2 col-md-4 col-sm-4 col-xs-2 pr-0">
+            <div className="col-lg-2 col-md-4 col-sm-4 pr-0">
                 <Sidebar></Sidebar>
             </div>
-            <div className="col-lg-10 col-md-8 col-sm-8 col-xs-10 pl-0" style={{ backgroundColor: '#F4F7FC', height: '100vh' }} >
+            <div className="col-lg-10 col-md-8 col-sm-8 pl-0" style={{ backgroundColor: '#F4F7FC', height: '100vh' }} >
                 <DashboardHeader title='Add Admin'></DashboardHeader>
                 <form onSubmit={handleSubmit(onSubmit)} className="py-3">
                     <div className="form-row py-5 pl-5">
@@ -47,5 +49,4 @@ const MakeAdmin = () => {
         </div>
     );
 };
-
-export default MakeAdmin;
+export default CreateAdmin;

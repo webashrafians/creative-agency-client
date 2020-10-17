@@ -1,5 +1,4 @@
 import React from 'react';
-import './ServiceTableShortList.css';
 
 const ServiceTableShortList = ({ serviceTableData }) => {
     return (
@@ -22,7 +21,7 @@ const ServiceTableShortList = ({ serviceTableData }) => {
                             <td>{serviceTable.projectTitle}</td>
                             <td>{serviceTable.projectDetails}</td>
                             <td scope="col" span="1">
-                                <select className="status-change">
+                                <select style={{border:'none'}}>
                                     <option className="text-danger" >{serviceTable.status}</option>
                                     <option value="done">Done</option>
                                 </select>

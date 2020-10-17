@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ServiceByCardDetails = ({ serviceCard }) => {
+    
     return (
         <div className="col-md-4">
             <div className="card mt-3">

@@ -1,14 +1,15 @@
+import './Sidebar.css';
+import { useEffect } from 'react';
+import { useContext } from 'react';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../../App';
 import logo from '../../../resources/images/logos/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faCartPlus, faShoppingBag, faComment, faUserAlt, faPlus } from '@fortawesome/free-solid-svg-icons';
-import './Sidebar.css';
-import { UserContext } from '../../../App';
-import { useContext } from 'react';
-import { useEffect } from 'react';
 
 const Sidebar = () => {
+
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [isAdmin, setIsAdmin] = useState(false);
 
@@ -51,7 +52,7 @@ const Sidebar = () => {
                                 </Link>
                             </li>
                             <li class="nav-item">
-                                <Link to="/dashboard/makeAdmin" class="nav-link text-dark">
+                                <Link to="/dashboard/CreateAdmin" class="nav-link text-dark">
                                     <FontAwesomeIcon icon={faUserAlt} className="mr-2" />
                                     <span>Make Admin</span>
                                 </Link>
@@ -79,10 +80,8 @@ const Sidebar = () => {
                             </li>
                         </div>
                 }
-
             </ul>
         </div>
     );
 };
-
 export default Sidebar;

@@ -1,19 +1,20 @@
 import React from 'react';
+import { useContext } from 'react';
+// import { toast } from 'react-toastify';
+import Sidebar from '../SideBar/Sidebar';
 import { useForm } from 'react-hook-form';
+import { UserContext } from '../../../App';
 import { useHistory } from 'react-router-dom';
 import DashboardHeader from '../DashboardHeader/DashboardHeader';
-import Sidebar from '../SideBar/Sidebar';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { UserContext } from '../../../App';
-import { useContext } from 'react';
+// import '../CreateAdmin/node_modules/react-toastify/dist/ReactToastify.css';
 
-toast.configure();
+// toast.configure();
 
 const Review = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const { register, handleSubmit, errors } = useForm();
     const history = useHistory();
+    
     const onSubmit = data => {
         const reviewDetails = { review: data };
         fetch('https://pure-inlet-65517.herokuapp.com/addReview', {
@@ -26,18 +27,18 @@ const Review = () => {
             .then(response => response.json())
             .then(data => {
                 if (data) {
-                    // alert('Review Added Successfully');
-                    toast.success('Review Added Successfully')
+                    // toast.success('Review Added Successfully')
                     history.push("/reviewList");
                 }
             })
     };
+
     return (
         <div className="row">
-            <div className="col-lg-2 col-md-4 col-sm-4 col-xs-2 pr-0">
+            <div className="col-lg-2 col-md-4 col-sm-4 pr-0">
                 <Sidebar></Sidebar>
             </div>
-            <div className="col-lg-10 col-md-8 col-sm-8 col-xs-10 pl-0" style={{ backgroundColor: '#F4F7FC', height: '100vh' }} >
+            <div className="col-lg-10 col-md-8 col-sm-8 pl-0" style={{ backgroundColor: '#F4F7FC', height: '100vh' }} >
                 <DashboardHeader title='Review'></DashboardHeader>
                 <form onSubmit={handleSubmit(onSubmit)} className="py-5 pl-5">
                     <div className="form-group">
@@ -61,5 +62,4 @@ const Review = () => {
         </div>
     );
 };
-
 export default Review;

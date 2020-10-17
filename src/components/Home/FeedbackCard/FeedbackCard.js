@@ -2,7 +2,9 @@ import React from 'react';
 import './FeedbackCard.css';
 
 const FeedbackCard = (props) => {
+
     const {name, companyName, description} = props.review.review;
+    
     return (
         <div className="col-md-4 py-2">
             <div class="card p-3 feedback-card">

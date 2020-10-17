@@ -1,8 +1,2 @@
-.dashboard{
-    height: 90px;
-    background-color: white;
-}
-.user-img{
-    height: 30px;
-    width: 30px;
-}
+.dashboard{ height: 90px; background-color: white; }
+.user-img{ height: 30px; width: 30px; }

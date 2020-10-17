@@ -2,6 +2,7 @@ import React from 'react';
 import ServiceTableShortList from '../SeviceTableShortList/ServiceTableShortList';
 
 const ServiceTableDataInfo = ({serviceTableData}) => {
+    
     return (
         <div>
             {

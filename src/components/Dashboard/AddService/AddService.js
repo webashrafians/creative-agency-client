@@ -1,10 +1,10 @@
 import React from 'react';
 import { useState } from 'react';
-import { useHistory } from 'react-router-dom';
-import DashboardHeader from '../DashboardHeader/DashboardHeader';
-import Sidebar from '../SideBar/Sidebar';
 import { toast } from 'react-toastify';
+import Sidebar from '../SideBar/Sidebar';
+import { useHistory } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
+import DashboardHeader from '../DashboardHeader/DashboardHeader';
 
 toast.configure();
 
@@ -19,6 +19,7 @@ const AddService = () => {
         newInfo[e.target.name] = e.target.value;
         setInfo(newInfo);
     }
+    
     const handleFileChange = (e) => {
         const newFile = e.target.files[0];
         setFile(newFile);
@@ -79,8 +80,6 @@ const AddService = () => {
                 </form>
             </div>
         </div>
-
     );
 };
-
 export default AddService;

@@ -4,12 +4,6 @@ import FeedbackCard from '../FeedbackCard/FeedbackCard';
 
 const ClientFeedback = () => {
     const [reviews, setReviews] = useState([]);
-    
-    // useEffect(()=>{
-    //     fetch('https://pure-inlet-65517.herokuapp.com/reviewList')
-    //     .then(response=> response.json())
-    //     .then(data=>setReviews(data))
-    // } ,[])
 
     useEffect(()=>{
         fetch('https://pure-inlet-65517.herokuapp.com/reviewList', {
@@ -31,6 +25,5 @@ const ClientFeedback = () => {
             </div>
         </div>
     );
-
 };
 export default ClientFeedback;
